@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mapping</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+body{margin:0;font-family:Arial;}
+
+.navbar{
+    background:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+}
+
+#map{height:100vh;}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>🗺️ Project Mapping Dashboard</h2>
+<a href="{{ url_for('home') }}">← Dashboard</a>
+</div>
+
+<div id="map"></div>
+
+<script>
+var map = L.map('map').setView([22,78],6);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map);
+
+// 🔥 COLORED MARKERS
+function getIcon(status){
+    if(status=="On Track") return "https://maps.google.com/mapfiles/ms/icons/green-dot.png";
+    if(status=="Delayed") return "https://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+    return "https://maps.google.com/mapfiles/ms/icons/red-dot.png";
+}
+
+{% for p in projects %}
+L.marker([{{ p.lat }},{{ p.lon }}],{
+    icon:L.icon({
+        iconUrl:getIcon("{{ p.status }}"),
+        iconSize:[30,30]
+    })
+})
+.addTo(map)
+.bindPopup("<b>State:</b> {{ p.state }}<br><b>Status:</b> {{ p.status }}");
+{% endfor %}
+</script>
+
+</body>
+</html>

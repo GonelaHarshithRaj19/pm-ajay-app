@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction - PM-AJAY</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+
+            background-image: url("{{ url_for('static', filename='bg.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: rgba(11, 44, 82, 0.95);
+            color: white;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            margin: 15px 0;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .sidebar a.active {
+            background: #4e73df;
+        }
+
+        .main {
+            margin-left: 240px;
+            padding: 40px;
+        }
+
+        .title {
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 25px;
+            border-radius: 12px;
+            width: 420px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(6px);
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #3b5edb;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>PM-AJAY</h2>
+
+    <!-- ✅ FIXED ROUTES -->
+    <a href="{{ url_for('home') }}">Dashboard</a>
+    <a class="active" href="{{ url_for('prediction_page') }}">Prediction</a>
+</div>
+
+<div class="main">
+
+    <h2 class="title">🔮 Predict Project Status</h2>
+
+    <div class="form-box">
+
+        <form method="POST" action="/predict">
+
+            <label>Completion (%)</label>
+            <input name="completion" type="number" step="0.1" required>
+
+            <label>Delay (days)</label>
+            <input name="delay" type="number" step="0.1" required>
+
+            <label>Funds Utilized</label>
+            <input name="funds_utilized" type="number">
+
+            <label>Funds Allocated</label>
+            <input name="funds_allocated" type="number">
+
+            <label>Project Name</label>
+            <input name="project_name">
+
+            <label>Component</label>
+            <input name="component" placeholder="Adarsh Gram / GIA / Hostel">
+
+            <label>Agency Type</label>
+            <input name="agency_type">
+
+            <label>Manpower</label>
+            <input name="manpower" type="number">
+
+            <label>Project Duration (months)</label>
+            <input name="project_duration" type="number">
+
+            <label>Select State</label>
+            <select name="state" required>
+                <!-- STATES -->
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CG">Chhattisgarh</option>
+                <option value="GA">Goa</option>
+                <option value="GJ">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OD">Odisha</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TS">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="UK">Uttarakhand</option>
+                <option value="WB">West Bengal</option>
+
+                <!-- UTs -->
+                <option value="AN">Andaman & Nicobar</option>
+                <option value="CH">Chandigarh</option>
+                <option value="DN">Dadra & Nagar Haveli</option>
+                <option value="DD">Daman & Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="JK">Jammu & Kashmir</option>
+                <option value="LA">Ladakh</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="PY">Puducherry</option>
+            </select>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

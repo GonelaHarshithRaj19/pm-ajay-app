@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History - PM-AJAY</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* 🔵 SIDEBAR */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #0b2c52;
+            color: white;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            margin: 15px 0;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .sidebar a.active {
+            background: #4e73df;
+        }
+
+        /* 🧾 MAIN */
+        .main {
+            margin-left: 240px;
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        th {
+            background: #4e73df;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🔵 SIDEBAR -->
+<div class="sidebar">
+    <h2>PM-AJAY</h2>
+
+    <a href="{{ url_for('home') }}">Dashboard</a>
+
+    <a href="{{ url_for('prediction_page') }}">Prediction</a>
+
+    <a href="{{ url_for('mapping') }}">Mapping</a>
+
+    <a class="active" href="{{ url_for('history') }}">History</a>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
+<!-- 🧾 MAIN -->
+<div class="main">
+
+    <h2>📜 Project History</h2>
+
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Status</th>
+        </tr>
+
+        {% for p in projects %}
+        <tr>
+            <td>{{ p.state }}</td>
+            <td>{{ p.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

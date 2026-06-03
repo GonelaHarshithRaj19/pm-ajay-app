@@ -1,0 +1,29 @@
+Project_ID,Project_Name,Component,State,Agency_Type,Funds_Allocated,Funds_Utilized,Completion_Percentage,Delay_Days,Manpower,Project_Duration,Status
+1,Water Supply AP,Adarsh Gram,AP,Implementing,50,45,90,0,120,12,On Track
+2,Road Project AR,GIA,AR,Executing,30,20,65,12,80,10,Delayed
+3,Hostel Build AS,Hostel,AS,Implementing,40,25,55,20,60,14,Delayed
+4,Smart Village BR,Adarsh Gram,BR,Executing,60,58,95,0,150,18,On Track
+5,School Infra CG,GIA,CG,Implementing,35,28,80,5,90,12,At Risk
+6,Road Dev GA,Hostel,GA,Executing,45,30,60,15,75,10,Delayed
+7,Water Project GJ,Adarsh Gram,GJ,Implementing,55,50,88,2,110,15,On Track
+8,Bridge HR,GIA,HR,Executing,25,15,50,18,70,11,Delayed
+9,School HP,Hostel,HP,Implementing,38,32,85,3,95,13,On Track
+10,Drainage JH,GIA,JH,Executing,42,35,82,4,85,12,On Track
+11,Road KA,Adarsh Gram,KA,Implementing,48,40,85,3,100,14,On Track
+12,Water KL,GIA,KL,Executing,33,25,70,10,80,10,Delayed
+13,Bridge MP,Hostel,MP,Implementing,37,30,78,6,90,13,At Risk
+14,Smart City MH,Adarsh Gram,MH,Executing,44,42,92,1,130,16,On Track
+15,School MN,GIA,MN,Implementing,28,18,60,14,65,11,Delayed
+16,Road ML,Hostel,ML,Executing,36,29,80,5,85,12,At Risk
+17,Water MZ,Adarsh Gram,MZ,Implementing,52,47,90,2,105,14,On Track
+18,Bridge NL,GIA,NL,Executing,31,27,85,3,75,11,On Track
+19,Drainage OD,Hostel,OD,Implementing,39,20,50,20,70,15,Delayed
+20,School PB,GIA,PB,Executing,41,35,82,4,95,13,On Track
+21,Road RJ,Adarsh Gram,RJ,Implementing,53,45,88,3,120,16,On Track
+22,Water SK,GIA,SK,Executing,29,19,60,12,70,10,Delayed
+23,Bridge TN,Hostel,TN,Implementing,47,38,81,5,100,14,At Risk
+24,Smart TS,Adarsh Gram,TS,Executing,50,46,90,1,130,15,On Track
+25,School TR,GIA,TR,Implementing,32,22,68,10,85,12,Delayed
+26,Road UP,Hostel,UP,Executing,60,55,92,2,140,18,On Track
+27,Water UK,Adarsh Gram,UK,Implementing,45,35,78,6,95,13,At Risk
+28,Bridge WB,GIA,WB,Executing,40,30,75,8,100,14,Delayed
